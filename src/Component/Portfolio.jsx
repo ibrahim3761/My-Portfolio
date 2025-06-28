@@ -1,10 +1,12 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
-import portfolio from "../assets/photo_2024-10-04_18-17-17.jpg";
+
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
+import Hero from "./Hero";
+
 
 const Portfolio = () => {
   
@@ -14,69 +16,7 @@ const Portfolio = () => {
       <Navbar></Navbar>
 
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between mt-12 text-center md:text-left gap-6">
-        {/* Left side: Text */}
-        <div className="space-y-4 max-w-4xl">
-          <h1 className="text-5xl text-gray-700 font-bold">
-            Mohammad Ibrahim <span className="text-blue-600">Abdullah</span>
-          </h1>
-          <h2 className="text-2xl text-gray-700 font-semibold">
-            Frontend Developer
-          </h2>
-          <p className="text-gray-500">
-            Building clean, responsive, and scalable web applications with
-            React, TailwindCSS, and modern JavaScript frameworks. Passionate
-            about creating intuitive user interfaces, optimizing performance,
-            and bringing ideas to life through elegant, maintainable code.
-          </p>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-            Download Resume
-          </button>
-          <div className="flex justify-center md:justify-start mt-6 space-x-4 text-2xl text-gray-600">
-            <a
-              aria-label="GitHub"
-              href="https://github.com/ibrahim3761"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-            </a>
-            <a
-              aria-label="LinkedIn"
-              href="https://www.linkedin.com/in/your-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              aria-label="Twitter"
-              href="https://twitter.com/your-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              aria-label="Facebook"
-              href="https://facebook.com/your-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook />
-            </a>
-          </div>
-        </div>
-
-        {/* Right side: Profile Image */}
-        <div className="flex justify-center">
-          <img
-            src={portfolio}
-            alt="Profile photo of Mohammad Ibrahim Abdullah"
-            className="rounded-full w-60 md:w-96 transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-      </section>
+      <Hero></Hero>
 
       {/* About Me */}
       <section id="about" className="mt-12">
