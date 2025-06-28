@@ -22,18 +22,18 @@ const Portfolio = () => {
       </section>
 
       {/* About Me */}
-      <section id="about" className="mt-12">
+      <section id="about" className="mt-12 scroll-mt-20 md:scroll-mt-24">
         <About></About>
       </section>
 
       {/* Skills */}
-      <section id="skills" className="mt-12">
+      <section id="skills" className="mt-12 scroll-mt-20 md:scroll-mt-24">
         <Skills></Skills>
       </section>
 
       {/* education */}
-      <section id="education" className="mt-16 w-full">
-        <h3 className="text-2xl font-bold mb-6 text-blue-600 flex items-center gap-2">
+      <section id="education" className="mt-16 w-full scroll-mt-20 md:scroll-mt-24">
+        <h3 className="text-3xl text-center md:text-left font-bold mb-6 text-blue-600 flex items-center gap-2">
           Educational Qualification
         </h3>
 
@@ -70,12 +70,12 @@ const Portfolio = () => {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="mt-12">
+      <section id="projects" className="mt-12 scroll-mt-20 md:scroll-mt-24">
        <Projects></Projects>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mt-12 mb-12">
+      <section id="contact" className="mt-12 mb-12 scroll-mt-20 md:scroll-mt-24">
         <Contact></Contact>
       </section>
     </div>

@@ -54,7 +54,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/your-link"
+              href="https://www.linkedin.com/in/mohammad-ibrahim-abdullah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit LinkedIn profile"
@@ -64,7 +64,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://twitter.com/your-link"
+              href="https://x.com/ibrahim376146"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Twitter profile"
@@ -74,7 +74,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://facebook.com/your-link"
+              href="https://www.facebook.com/Ibrahim376146ab/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Facebook profile"
