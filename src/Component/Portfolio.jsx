@@ -6,6 +6,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import Hero from "./Hero";
+import About from "./About";
 
 
 const Portfolio = () => {
@@ -22,23 +23,7 @@ const Portfolio = () => {
 
       {/* About Me */}
       <section id="about" className="mt-12">
-        <h3 className="text-2xl font-bold mb-6 text-center md:text-left text-blue-600">
-          About Me
-        </h3>
-        <p className="text-gray-600">
-          I’m currently pursuing a BSc in Computer Science and Engineering at
-          International Islamic University Chittagong (2023–present). My journey
-          into programming began with a strong curiosity about how the internet
-          and web technologies work, which naturally led me to specialize in
-          frontend development. I’m passionate about crafting visually engaging,
-          responsive, and user-friendly web applications using modern tools like
-          React and TailwindCSS. <br />
-          <br />
-          Beyond the screen, I find inspiration in nature and recharge through
-          playing football—activities that spark fresh ideas and creativity in
-          my development work. I'm always eager to learn, grow, and build
-          projects that make a difference.
-        </p>
+        <About></About>
       </section>
 
       {/* Skills */}

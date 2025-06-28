@@ -60,7 +60,7 @@ const Skills = () => {
 
   return (
     <div>
-      <h3 className="text-2xl font-bold mb-6 text-center md:text-left text-blue-600">
+      <h3 className="text-3xl font-bold mb-6 text-center md:text-left text-blue-600">
         Skills
       </h3>
 
