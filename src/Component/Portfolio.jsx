@@ -16,7 +16,9 @@ const Portfolio = () => {
       <Navbar></Navbar>
 
       {/* Hero Section */}
-      <Hero></Hero>
+      <section>
+        <Hero></Hero>
+      </section>
 
       {/* About Me */}
       <section id="about" className="mt-12">

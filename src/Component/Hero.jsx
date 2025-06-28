@@ -2,44 +2,20 @@ import React from "react";
 import { Github, Linkedin, Twitter, Facebook, Download } from "lucide-react";
 import Image from "../assets/photo_2024-10-04_18-17-17.jpg";
 
-// Button Component
-const Button = ({
-  children,
-  onClick,
-  size = "md",
-  className = "",
-  ...props
-}) => {
-  const sizeClasses = {
-    sm: "px-3 py-2 text-sm",
-    md: "px-4 py-2",
-    lg: "px-6 py-3 text-lg",
-  };
 
-  return (
-    <button
-      onClick={onClick}
-      className={`inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${sizeClasses[size]} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
 
 const Hero = () => {
-  const handleResumeDownload = () => {
-    window.open("/resume.pdf", "_blank");
-  };
+  
 
   return (
-    <section className="container py-12 md:pt-24 md:pb-10 md:mt-10">
+    <section className="container py-12 md:pt-24 md:pb-10 mt-10">
       <div className="flex flex-col md:flex-row justify-between gap-8 lg:gap-12 items-center">
         {/* Content Section */}
         <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Mohammad Ibrahim <br /> <span className="text-blue-600">Abdullah</span>
+              Mohammad Ibrahim <br />{" "}
+              <span className="text-blue-600">Abdullah</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl font-semibold text-gray-700">
@@ -56,14 +32,13 @@ const Hero = () => {
 
           {/* CTA Button */}
           <div className="pt-2">
-            <Button
-              onClick={handleResumeDownload}
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+            <button
+              onClick={() => window.open("/resume.pdf", "_blank")}
+              className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Download className="w-4 h-4 mr-2" />
               Download Resume
-            </Button>
+            </button>
           </div>
 
           {/* Hardcoded Social Links */}
