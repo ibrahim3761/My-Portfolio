@@ -12,7 +12,7 @@ import About from "./About";
 const Portfolio = () => {
   
   return (
-    <div className="font-sans px-2 md:px-16 ">
+    <div className="px-2 md:px-16 ">
       {/* Navbar */}
       <Navbar></Navbar>
 
@@ -22,12 +22,12 @@ const Portfolio = () => {
       </section>
 
       {/* About Me */}
-      <section id="about" className="mt-12 scroll-mt-20 md:scroll-mt-24">
+      <section id="about" className="mt-16 scroll-mt-20 md:scroll-mt-24">
         <About></About>
       </section>
 
       {/* Skills */}
-      <section id="skills" className="mt-12 scroll-mt-20 md:scroll-mt-24">
+      <section id="skills" className="mt-16 scroll-mt-20 md:scroll-mt-24">
         <Skills></Skills>
       </section>
 
@@ -70,12 +70,12 @@ const Portfolio = () => {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="mt-12 scroll-mt-20 md:scroll-mt-24">
+      <section id="projects" className="mt-16 scroll-mt-20 md:scroll-mt-24">
        <Projects></Projects>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mt-12 mb-12 scroll-mt-20 md:scroll-mt-24">
+      <section id="contact" className="mt-16 mb-12 scroll-mt-20 md:scroll-mt-24">
         <Contact></Contact>
       </section>
     </div>

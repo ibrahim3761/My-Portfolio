@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download, ChevronDown } from "lucide-react";
+import { Menu, X, Eye } from "lucide-react";
 import Logo from "./Logo/Logo";
 
 const Navbar = () => {
@@ -9,7 +9,6 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -34,7 +33,7 @@ const Navbar = () => {
           : "bg-white/95 backdrop-blur-sm border-b border-gray-200"
       }`}
     >
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="w-full px-4 sm:px-6 lg:px-16">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0 z-10">
@@ -42,7 +41,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center ml-28 space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -55,15 +54,21 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <button className="relative group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
-              <span className="relative z-10 flex items-center space-x-2">
-                <Download className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-                <span>Download Resume</span>
-              </span>
-            </button>
+            <a
+              href="https://drive.google.com/file/d/1_nzCVEfPgwMRL2jGewb2uzFsm3760Dda/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="cursor-pointer relative group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+                <span className="relative z-10 flex items-center space-x-2">
+                  <Eye className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                  <span>View Resume</span>
+                </span>
+              </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,9 +115,7 @@ const Navbar = () => {
                 href={link.href}
                 onClick={closeMenu}
                 className={`text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium py-3 px-4 rounded-lg hover:bg-blue-50 transform ${
-                  isOpen
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-4 opacity-0"
+                  isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
@@ -121,21 +124,25 @@ const Navbar = () => {
             ))}
             <div
               className={`pt-4 border-t border-gray-200 transform transition-all duration-300 ${
-                isOpen
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-4 opacity-0"
+                isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
               }`}
               style={{ transitionDelay: "250ms" }}
             >
-              <button
-                onClick={closeMenu}
-                className="w-full group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
+              <a
+                href="https://drive.google.com/file/d/1_nzCVEfPgwMRL2jGewb2uzFsm3760Dda/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span className="flex items-center justify-center space-x-2">
-                  <Download className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-                  <span>Download Resume</span>
-                </span>
-              </button>
+                <button
+                  onClick={closeMenu}
+                  className="w-full group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
+                >
+                  <span className="flex items-center justify-center space-x-2">
+                    <Eye className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                    <span>View Resume</span>
+                  </span>
+                </button>
+              </a>
             </div>
           </div>
         </div>

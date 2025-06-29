@@ -6,7 +6,7 @@ const About = () => {
       <div>
         <h2 className="text-3xl font-bold mb-8 text-center md:text-left text-blue-600">About Me</h2>
 
-        <div className="text-gray-700 text-lg leading-relaxed space-y-6">
+        <div className="text-gray-700 text-lg leading-relaxed space-y-3">
           <p>
             I'm currently pursuing a{" "}
             <strong>BSc in Computer Science and Engineering</strong> at
@@ -14,6 +14,10 @@ const About = () => {
             journey into programming began with a strong curiosity about how the
             internet and web technologies work, which naturally led me to
             specialize in frontend development.
+          </p>
+
+          <p>
+            I've completed over 5 projects and have contributed to more than 500 commits on GitHub, constantly honing my skills and building real-world applications.
           </p>
 
           <p>

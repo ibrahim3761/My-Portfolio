@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExternalLink, Github, X } from "lucide-react";
+import { ExternalLink, Github, X, ListCollapse } from "lucide-react";
 import artifact from "../assets/artifact-vault-1.jpg";
 import plant from "../assets/plant-care.jpg";
 import tech from "../assets/tech-deal.jpg";
@@ -15,11 +15,11 @@ const Projects = () => {
       live: "https://artifact-vault-app.web.app/",
       github: "https://github.com/ibrahim3761/Artifact-vault-client",
       stack: "React, TailwindCSS, Firebase",
-      tags: ["React", "TailwindCSS", "Firebase"],
+      tags: ["React", "TailwindCSS", "Firebase", "JWT", "Node", "Express", "MongoDB"],
       description:
         "A digital collection management platform allowing users to upload, organize, and share digital artifacts efficiently.",
       challenges:
-        "Integrating Firebase for secure user management and scalable storage structure.",
+        "Integrating JWT with Firebase token for secure user management and scalable storage structure.",
       improvements:
         "Add AI-based artifact classification and collaborative vault sharing features.",
     },
@@ -30,11 +30,11 @@ const Projects = () => {
       live: "https://plant-care-app-d7978.web.app/",
       github: "https://github.com/ibrahim3761/Plant-Care-Client",
       stack: "React, TailwindCSS, Firebase",
-      tags: ["React", "TailwindCSS", "Firebase"],
+      tags: ["React", "TailwindCSS", "Firebase", "Node", "Express", "MongoDB"],
       description:
         "An app for tracking plant watering schedules and care needs with reminders.",
       challenges:
-        "Setting up precise reminder systems and user data management.",
+        "Integrating a backend server with Node, Express, and MongoDB for better data management was challenging as it was my first time working with these technologies.",
       improvements:
         "Future integration with IoT sensors for automated watering reminders.",
     },
@@ -45,13 +45,13 @@ const Projects = () => {
       live: "https://tech-deal.netlify.app/",
       github: "https://github.com/ibrahim3761/Tech-Deal",
       stack: "React, TailwindCSS",
-      tags: ["React", "TailwindCSS"],
+      tags: ["React", "TailwindCSS", "Firebase"],
       description:
         "A clean landing site showcasing tech deals in an organized UI.",
       challenges:
-        "Maintaining responsiveness across all device sizes with dynamic content.",
+        "Integrating Firebase for secure user management and scalable storage structure.",
       improvements:
-        "Add user authentication and personalized deal notifications.",
+        "Future integration of server based sytem for data mangement.",
     },
   ];
 
@@ -131,8 +131,9 @@ const Projects = () => {
                   </a>
                   <button
                     onClick={() => setShowDetails(idx)}
-                    className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium border-2 border-gray-300 cursor-pointer"
+                    className="flex items-center gap-1 justify-center bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium border-2 border-gray-300 cursor-pointer"
                   >
+                    <ListCollapse className="w-4 h-4" />
                     Details
                   </button>
                 </div>
