@@ -15,7 +15,15 @@ const Projects = () => {
       live: "https://artifact-vault-app.web.app/",
       github: "https://github.com/ibrahim3761/Artifact-vault-client",
       stack: "React, TailwindCSS, Firebase",
-      tags: ["React", "TailwindCSS", "Firebase", "JWT", "Node", "Express", "MongoDB"],
+      tags: [
+        "React",
+        "TailwindCSS",
+        "Firebase",
+        "JWT",
+        "Node",
+        "Express",
+        "MongoDB",
+      ],
       description:
         "A digital collection management platform allowing users to upload, organize, and share digital artifacts efficiently.",
       challenges:
@@ -61,7 +69,6 @@ const Projects = () => {
         {/* Header */}
         <div className="mb-12 text-center md:text-left">
           <h2 className="text-3xl font-bold text-blue-600 mb-4 flex items-center justify-center md:justify-start gap-2">
-            
             Projects
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto md:mx-0">
@@ -94,7 +101,7 @@ const Projects = () => {
 
                 {/* Tags */}
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
+                  {project.tags.slice(0, 3).map((tag, i) => (
                     <span
                       key={i}
                       className="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full border border-blue-200"
@@ -102,6 +109,11 @@ const Projects = () => {
                       {tag}
                     </span>
                   ))}
+                  {project.tags.length > 3 && (
+                    <span className="bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
+                      +{project.tags.length - 3} more
+                    </span>
+                  )}
                 </div>
 
                 {/* Description Preview */}
