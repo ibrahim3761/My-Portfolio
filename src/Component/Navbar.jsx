@@ -25,6 +25,26 @@ const Navbar = () => {
     { href: "#contact", label: "Contact" },
   ];
 
+  // Resume links
+  const resumePreviewLink =
+    "https://drive.google.com/file/d/1ooovy33xBhFi0Josgh9uGe1-w1v32FpV/view?usp=sharing";
+  const resumeDownloadLink =
+    "https://drive.google.com/uc?export=download&id=1ooovy33xBhFi0Josgh9uGe1-w1v32FpV";
+
+  // Function to open preview and trigger download
+  const handleResumeClick = () => {
+    // Open preview
+    window.open(resumePreviewLink, "_blank");
+
+    // Trigger download
+    const link = document.createElement("a");
+    link.href = resumeDownloadLink;
+    link.setAttribute("download", "Ibrahim_Resume.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -56,19 +76,16 @@ const Navbar = () => {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <a
-              href="https://drive.google.com/file/d/1ooovy33xBhFi0Josgh9uGe1-w1v32FpV/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleResumeClick}
+              className="cursor-pointer relative group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 overflow-hidden"
             >
-              <button className="cursor-pointer relative group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
-                <span className="relative z-10 flex items-center space-x-2">
-                  <Eye className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-                  <span>View Resume</span>
-                </span>
-              </button>
-            </a>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+              <span className="relative z-10 flex items-center space-x-2">
+                <Eye className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                <span>View & Download Resume</span>
+              </span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,27 +139,26 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+
+            {/* Mobile Resume Button */}
             <div
               className={`pt-4 border-t border-gray-200 transform transition-all duration-300 ${
                 isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
               }`}
               style={{ transitionDelay: "250ms" }}
             >
-              <a
-                href="https://drive.google.com/file/d/1_nzCVEfPgwMRL2jGewb2uzFsm3760Dda/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  handleResumeClick();
+                  closeMenu();
+                }}
+                className="w-full group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
               >
-                <button
-                  onClick={closeMenu}
-                  className="w-full group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
-                >
-                  <span className="flex items-center justify-center space-x-2">
-                    <Eye className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-                    <span>View Resume</span>
-                  </span>
-                </button>
-              </a>
+                <span className="flex items-center justify-center space-x-2">
+                  <Eye className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                  <span>View & Download Resume</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
