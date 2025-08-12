@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 const Skills = () => {
   const skills = [
@@ -76,25 +77,51 @@ const Skills = () => {
     },
   ];
 
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div>
+    <div ref={ref}>
       <h3 className="text-3xl font-bold mb-6 text-center md:text-left text-blue-600">
         Skills & Tools
       </h3>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
         {skills.map((skill, idx) => (
-          <div
+          <motion.div
             key={idx}
             className="bg-blue-50 p-4 rounded text-center shadow hover:shadow-lg hover:bg-blue-100 cursor-pointer transition duration-300"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: idx * 0.1, duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
           >
             <img
               src={skill.logo}
               alt={skill.name}
               className="w-10 h-10 mx-auto mb-2"
+              loading="lazy"
             />
-            <p className="text-sm font-medium text-gray-700">{skill.name}</p>
-          </div>
+            <p className="text-sm font-medium text-gray-700 whitespace-normal break-words">
+              {skill.name}
+            </p>
+          </motion.div>
         ))}
       </div>
     </div>

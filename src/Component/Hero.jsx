@@ -1,6 +1,13 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Github, Linkedin, Twitter, Facebook, Eye, CircleUser } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Eye,
+  CircleUser,
+} from "lucide-react";
 import Image from "../assets/photo_2024-10-04_18-17-17.jpg";
 
 const Hero = () => {

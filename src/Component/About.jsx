@@ -2,11 +2,13 @@ import React from "react";
 import { motion } from "motion/react";
 
 const About = () => {
+  const easing = [0.42, 0, 0.58, 1]; // ease-out cubic bezier
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: easing }}
     >
       <div>
         <h2 className="text-3xl font-bold mb-8 text-center md:text-left text-blue-600">
@@ -17,7 +19,7 @@ const About = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.3, duration: 0.6, ease: easing }}
           >
             I'm currently pursuing a{" "}
             <strong>BSc in Computer Science and Engineering</strong> at
@@ -30,7 +32,7 @@ const About = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.5, duration: 0.6, ease: easing }}
           >
             I've completed over 5 projects and have contributed to more than 500 commits on GitHub, constantly honing my skills and building real-world applications.
           </motion.p>
@@ -38,7 +40,7 @@ const About = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.7, duration: 0.6, ease: easing }}
           >
             I'm passionate about crafting visually engaging, responsive, and
             user-friendly web applications using modern tools like React and
@@ -49,7 +51,7 @@ const About = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.9, duration: 0.6, ease: easing }}
           >
             Beyond the screen, I find inspiration in nature and recharge through
             playing football—activities that spark fresh ideas and creativity in

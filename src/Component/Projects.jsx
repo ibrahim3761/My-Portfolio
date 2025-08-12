@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, Github, X, ListCollapse } from "lucide-react";
 import artifact from "../assets/artifact-vault-1.jpg";
 import plant from "../assets/plant-care.jpg";
@@ -80,9 +81,13 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
-            <div
+            <motion.div
               key={project.id}
               className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15, duration: 0.5, ease: "easeOut" }}
+              whileHover={{ scale: 1.03 }}
             >
               {/* Project Image */}
               <div className="overflow-hidden">
@@ -150,104 +155,117 @@ const Projects = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Modal */}
-      {showDetails !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
-            {/* Close Button */}
-            <button
-              onClick={() => setShowDetails(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-              aria-label="Close"
+      <AnimatePresence>
+        {showDetails !== null && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              <X className="w-6 h-6" />
-            </button>
+              {/* Close Button */}
+              <button
+                onClick={() => setShowDetails(null)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
 
-            {/* Modal Content */}
-            <div className="pr-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {projects[showDetails].name}
-              </h3>
+              {/* Modal Content */}
+              <div className="pr-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {projects[showDetails].name}
+                </h3>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {projects[showDetails].tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1 rounded-full border border-blue-200"
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {projects[showDetails].tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1 rounded-full border border-blue-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Project Details */}
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      Tech Stack
+                    </h4>
+                    <p className="text-gray-700">{projects[showDetails].stack}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      Description
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {projects[showDetails].description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      Key Challenges
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {projects[showDetails].challenges}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      Future Improvements
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {projects[showDetails].improvements}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-4">
+                  <a
+                    href={projects[showDetails].live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Project Details */}
-              <div className="space-y-4 mb-8">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Tech Stack
-                  </h4>
-                  <p className="text-gray-700">{projects[showDetails].stack}</p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Description
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {projects[showDetails].description}
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Key Challenges
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {projects[showDetails].challenges}
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Future Improvements
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {projects[showDetails].improvements}
-                  </p>
+                    <ExternalLink className="w-4 h-4 cursor-pointer" />
+                    View Live Demo
+                  </a>
+                  <a
+                    href={projects[showDetails].github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium"
+                  >
+                    <Github className="w-4 h-4 cursor-pointer" />
+                    View Source Code
+                  </a>
                 </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-4">
-                <a
-                  href={projects[showDetails].live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                >
-                  <ExternalLink className="w-4 h-4 cursor-pointer" />
-                  View Live Demo
-                </a>
-                <a
-                  href={projects[showDetails].github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium"
-                >
-                  <Github className="w-4 h-4 cursor-pointer" />
-                  View Source Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
