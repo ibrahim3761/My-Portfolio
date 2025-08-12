@@ -90,13 +90,34 @@ const Projects = () => {
               whileHover={{ scale: 1.03 }}
             >
               {/* Project Image */}
-              <div className="overflow-hidden">
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block overflow-hidden h-56 group"
+                aria-label={`Live demo of ${project.name}`}
+              >
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="p-1 w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
+                <div
+                  className="
+                  absolute inset-0
+                  bg-gradient-to-t from-black/70 via-black/40 to-transparent
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-300
+                  flex items-end justify-center pb-6
+                  pointer-events-none
+                "
+                >
+                  <span className="text-white text-sm font-medium px-4 py-2 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    View Live Demo{" "}
+                    <ExternalLink className="inline ml-1 w-4 h-4" />
+                  </span>
+                </div>
+              </a>
 
               {/* Project Content */}
               <div className="p-6 flex flex-col h-full">
@@ -209,7 +230,9 @@ const Projects = () => {
                     <h4 className="font-semibold text-gray-900 mb-2">
                       Tech Stack
                     </h4>
-                    <p className="text-gray-700">{projects[showDetails].stack}</p>
+                    <p className="text-gray-700">
+                      {projects[showDetails].stack}
+                    </p>
                   </div>
 
                   <div>
