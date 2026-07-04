@@ -4,18 +4,45 @@ import { ExternalLink, Github, X, ListCollapse } from "lucide-react";
 import artifact from "../assets/artifact-vault-1.jpg";
 import plant from "../assets/plant-care.jpg";
 import tech from "../assets/tech-deal.jpg";
+import workhive from "../assets/Workhive.png";
 
 const Projects = () => {
   const [showDetails, setShowDetails] = useState(null);
 
   const projects = [
     {
+      id: "workhive",
+      name: "WorkHive",
+      image: workhive,
+      live: "https://work-hive-app.web.app/",
+      github: "https://github.com/ibrahim3761/WorkHive-client",
+      stack: "React, Tailwind CSS, Firebase, Node.js, Express.js, MongoDB",
+      tags: [
+        "React",
+        "TailwindCSS",
+        "Firebase",
+        "JWT",
+        "Node",
+        "Express",
+        "MongoDB",
+        "Stripe",
+      ],
+      description:
+        "A full-stack micro-task marketplace connecting Buyers and Workers with secure authentication, Stripe payments, notifications, and role-based dashboards.",
+
+      challenges:
+        "Implementing secure role-based authorization for Admins, Buyers, and Workers, along with Stripe payment integration and a withdrawal approval workflow.",
+
+      improvements:
+        "Add real-time chat, AI-powered task recommendations, and a review & rating system.",
+    },
+    {
       id: "artifact-vault",
       name: "Artifact Vault",
       image: artifact,
       live: "https://artifact-vault-app.web.app/",
       github: "https://github.com/ibrahim3761/Artifact-vault-client",
-      stack: "React, TailwindCSS, Firebase",
+      stack: "React, Tailwind CSS, Firebase, Node.js, Express.js, MongoDB",
       tags: [
         "React",
         "TailwindCSS",
@@ -38,8 +65,16 @@ const Projects = () => {
       image: plant,
       live: "https://plant-care-app-d7978.web.app/",
       github: "https://github.com/ibrahim3761/Plant-Care-Client",
-      stack: "React, TailwindCSS, Firebase",
-      tags: ["React", "TailwindCSS", "Firebase", "Node", "Express", "MongoDB"],
+      stack: "React, Tailwind CSS, Firebase, Node.js, Express.js, MongoDB",
+      tags: [
+        "React",
+        "TailwindCSS",
+        "Firebase",
+        "Node",
+        "JWT",
+        "Express",
+        "MongoDB",
+      ],
       description:
         "An app for tracking plant watering schedules and care needs with reminders.",
       challenges:
@@ -47,21 +82,21 @@ const Projects = () => {
       improvements:
         "Future integration with IoT sensors for automated watering reminders.",
     },
-    {
-      id: "tech-deal",
-      name: "Tech Deal",
-      image: tech,
-      live: "https://tech-deal.netlify.app/",
-      github: "https://github.com/ibrahim3761/Tech-Deal",
-      stack: "React, TailwindCSS",
-      tags: ["React", "TailwindCSS", "Firebase"],
-      description:
-        "A clean landing site showcasing tech deals in an organized UI.",
-      challenges:
-        "Integrating Firebase for secure user management and scalable storage structure.",
-      improvements:
-        "Future integration of server based sytem for data mangement.",
-    },
+    // {
+    //   id: "tech-deal",
+    //   name: "Tech Deal",
+    //   image: tech,
+    //   live: "https://tech-deal.netlify.app/",
+    //   github: "https://github.com/ibrahim3761/Tech-Deal",
+    //   stack: "React, TailwindCSS",
+    //   tags: ["React", "TailwindCSS", "Firebase"],
+    //   description:
+    //     "A clean landing site showcasing tech deals in an organized UI.",
+    //   challenges:
+    //     "Integrating Firebase for secure user management and scalable storage structure.",
+    //   improvements:
+    //     "Future integration of server based sytem for data mangement.",
+    // },
   ];
 
   return (
@@ -72,7 +107,7 @@ const Projects = () => {
           <h2 className="text-3xl font-bold text-blue-600 mb-4 flex items-center justify-center md:justify-start gap-2">
             Projects
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto md:mx-0">
+          <p className="text-gray-600 max-w-4xl mx-auto md:mx-0">
             Here are some of the projects I've built, showcasing my skills in
             modern web development
           </p>

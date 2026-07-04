@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "motion/react";
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, ExternalLink, FileText } from "lucide-react";
+import quad from "../assets/quad.jfif";
 
 const Experience = () => {
   const experiences = [
     {
       role: "Web Development Intern",
       company: "Quad Theory Ltd.",
+      companyUrl: "https://quadtheoryltd.com",
       location: "Banasree, Dhaka",
+      logo: quad,
       duration: "October 2025 - February 2026",
-      logo: "/public/quad.jfif",
       points: [
         "Implemented web prototypes and applications based on client requirements.",
         "Configured and customized software programs to meet project specifications.",
@@ -53,13 +55,35 @@ const Experience = () => {
                 <h4 className="text-2xl font-semibold text-gray-800">
                   {exp.role}
                 </h4>
-                <p className="text-gray-700 text-lg">{exp.company}</p>
 
-                <div className="flex flex-wrap gap-x-6 gap-y-1 text-gray-600 text-sm">
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-lg text-gray-700 hover:text-blue-600 hover:underline transition-colors"
+                  >
+                    {exp.company}
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href="/Mohammad Ibrahim Abdullah (1).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-blue-200 bg-white text-sm font-medium text-blue-600 hover:bg-blue-50 transition"
+                  >
+                    <FileText className="w-4 h-4" />
+                    Experience Letter
+                  </a>
+                </div>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 text-sm mt-2">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     {exp.duration}
                   </span>
+
                   <span className="flex items-center gap-1">
                     <MapPin className="w-4 h-4" />
                     {exp.location}

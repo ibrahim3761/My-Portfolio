@@ -39,10 +39,10 @@ const Skills = () => {
       name: "MongoDB",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
     },
-    {
-      name: "VS Code",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-    },
+    // {
+    //   name: "VS Code",
+    //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    // },
     {
       name: "Git",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
@@ -75,6 +75,10 @@ const Skills = () => {
       name: "PostgreSQL",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     },
+    {
+      name: "Prisma",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+    },
   ];
 
   const ref = useRef(null);
@@ -88,7 +92,7 @@ const Skills = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (ref.current) observer.observe(ref.current);
