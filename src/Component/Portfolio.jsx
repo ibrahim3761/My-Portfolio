@@ -7,10 +7,9 @@ import Skills from "./Skills";
 import Contact from "./Contact";
 import Hero from "./Hero";
 import About from "./About";
-
+import Experience from "./Experience";
 
 const Portfolio = () => {
-  
   return (
     <div className="px-2 md:px-16 ">
       {/* Navbar */}
@@ -32,7 +31,10 @@ const Portfolio = () => {
       </section>
 
       {/* education */}
-      <section id="education" className="mt-16 w-full scroll-mt-20 md:scroll-mt-24">
+      <section
+        id="education"
+        className="mt-16 w-full scroll-mt-20 md:scroll-mt-24"
+      >
         <h3 className="text-3xl text-center md:text-left font-bold mb-6 text-blue-600 flex items-center gap-2">
           Educational Qualification
         </h3>
@@ -69,13 +71,21 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Experience */}
+      <section id="experience" className="mt-16 scroll-mt-20 md:scroll-mt-24">
+        <Experience></Experience>
+      </section>
+
       {/* Projects */}
       <section id="projects" className="mt-16 scroll-mt-20 md:scroll-mt-24">
-       <Projects></Projects>
+        <Projects></Projects>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mt-16 mb-12 scroll-mt-20 md:scroll-mt-24">
+      <section
+        id="contact"
+        className="mt-16 mb-12 scroll-mt-20 md:scroll-mt-24"
+      >
         <Contact></Contact>
       </section>
     </div>
