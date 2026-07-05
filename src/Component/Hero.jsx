@@ -57,12 +57,12 @@ const Hero = () => {
             </h1>
 
             <h2 className="text-lg md:text-2xl font-semibold text-gray-700">
-              Frontend Developer
+              Full Stack Developer
             </h2>
 
             <p className="text-gray-600 text-sm md:text-lg leading-relaxed max-w-3xl">
-              Crafting clean, responsive web apps with React and TailwindCSS.
-              I’m passionate about intuitive user experiences, high performance,
+              Building end-to-end web applications, from database to UI. I'm
+              passionate about clean architecture, intuitive user experiences,
               and turning ideas into elegant, maintainable code
             </p>
           </div>
